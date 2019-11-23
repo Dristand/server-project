@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ctf Tools</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <label for="asd">encode to base64</label>
+        <br>
+        <input id="asd" type="text" name='encode' value="">
+        <input type="submit" value="encode">
+    </form>
+    {% if context %}
+        {% if context.encoded %}
+            <p>your encoded base64: {{ context.encoded|safe }}</p>
+        {% endif %}
+    {% endif %}
+    <form action="/" method="POST">
+        <label for="asd">decode to base64</label>
+        <br>
+        <input id="asd" type="text" name='decode' value="">
+        <input type="submit" value="decode">
+    </form>
+    {% if context %}
+        {% if context.decoded %}
+            <p>your decoded base64: {{ context.decoded|safe }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
